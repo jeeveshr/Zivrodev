@@ -767,6 +767,38 @@ em {
   }
 }
 
+/* Secondary Tech Marquee */
+.marquee--tech {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.marquee--tech .marquee__content {
+  animation-duration: 40s;
+  /* Slower for tech logos */
+}
+
+.marquee--tech .marquee__tag {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.marquee--tech .marquee__tag:hover {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.marquee--tech .marquee__tag--dot {
+  font-size: 0.4rem;
+  color: var(--border);
+}
+
 /* ============================================================
    ABOUT
    ============================================================ */
