@@ -1,0 +1,21 @@
+{
+    "name": "launchlayer",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "npx convex codegen && vite build",
+        "preview": "vite preview",
+        "convex": "npx convex dev",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "devDependencies": {
+        "convex": "^1.19.0",
+        "gh-pages": "^6.3.0",
+        "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "convex": "^1.19.0"
+    }
+}

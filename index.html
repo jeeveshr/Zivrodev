@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zivrodev — Smart Websites. Real Growth.</title>
+    <meta name="description"
+        content="Zivrodev builds conversion-focused websites for startups, local businesses, and growing brands. Designed for performance. Built to scale." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ========== NAV ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">
+                <!-- Z Monogram: two interlocking squares -->
+                <svg class="nav__logo-icon" viewBox="0 0 36 36" width="32" height="32" fill="none" stroke="currentColor"
+                    stroke-width="2.2">
+                    <rect x="2" y="2" width="18" height="18" rx="3" />
+                    <rect x="16" y="16" width="18" height="18" rx="3" />
+                    <line x1="4" y1="18" x2="18" y2="4" stroke-width="2.5" />
+                    <line x1="18" y1="32" x2="32" y2="18" stroke-width="2.5" />
+                </svg>
+                Zivrodev
+            </a>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav__links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#work">Work</a></li>
+            </ul>
+
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                    <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <a href="#work" class="btn--outline btn">View Work</a>
+                <a href="#contact" class="btn btn--primary magnetic-btn">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <!-- Background Video -->
+        <video class="hero__video" autoplay muted loop playsinline>
+            <source src="https://cdn.coverr.co/videos/coverr-abstract-digital-particles/1080p.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero__inner">
+            <div class="hero__text">
+                <h1 class="hero__heading" data-reveal>
+                    Websites built<br />at the pace<br /><em>of growth</em>
+                </h1>
+                <div class="brand-3d" data-reveal>
+                    <span class="brand-3d__text" aria-hidden="true">Zivrodev</span>
+                </div>
+                <p class="hero__sub" data-reveal>
+                    In a world of templated web experiences,
+                    Zivrodev turns strategy into digital momentum.
+                </p>
+                <div class="hero__ctas" data-reveal>
+                    <a href="#" class="btn btn--primary btn--lg magnetic-btn" data-open-payment>Start Your Project</a>
+                    <a href="#work" class="btn--outline btn btn--lg magnetic-btn">View Work</a>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__card hero__card--1" data-float="1" data-reveal>
+                    <span class="hero__card-label">PROJECT STATUS</span>
+                    <strong>NextGen SaaS</strong>
+                    <div class="hero__card-bar">
+                        <div class="hero__card-bar-fill" style="width:78%"></div>
+                    </div>
+                    <span class="hero__card-meta">78% complete</span>
+                </div>
+                <div class="hero__card hero__card--2" data-float="2" data-reveal>
+                    <span class="hero__card-label">PERFORMANCE</span>
+                    <strong class="hero__card-big">98</strong>
+                    <span class="hero__card-meta">Lighthouse Score</span>
+                </div>
+                <div class="hero__card hero__card--3" data-float="3" data-reveal>
+                    <span class="hero__card-label">CONVERSION</span>
+                    <strong class="hero__card-big hero__card-big--accent">+42%</strong>
+                    <span class="hero__card-meta">Avg. uplift</span>
+                </div>
+
+                <!-- Speed Toggle Widget -->
+                <div class="speed-toggle" id="speedToggle" data-reveal>
+                    <div class="speed-toggle__header">
+                        <span class="speed-toggle__label">LIVE PERFORMANCE</span>
+                        <button class="speed-toggle__btn" id="speedBtn">
+                            <span class="speed-toggle__indicator"></span>
+                        </button>
+                    </div>
+                    <div class="speed-toggle__gauge">
+                        <svg viewBox="0 0 120 70" class="speed-toggle__svg">
+                            <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="var(--border)" stroke-width="8"
+                                stroke-linecap="round" />
+                            <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="var(--teal)" stroke-width="8"
+                                stroke-linecap="round" class="speed-toggle__arc" id="speedArc" />
+                        </svg>
+                        <span class="speed-toggle__score" id="speedScore">98</span>
+                    </div>
+                    <div class="speed-toggle__metrics">
+                        <div class="speed-toggle__metric">
+                            <span class="speed-toggle__metric-val" id="metricFCP">0.8s</span>
+                            <span class="speed-toggle__metric-label">FCP</span>
+                        </div>
+                        <div class="speed-toggle__metric">
+                            <span class="speed-toggle__metric-val" id="metricLCP">1.2s</span>
+                            <span class="speed-toggle__metric-label">LCP</span>
+                        </div>
+                        <div class="speed-toggle__metric">
+                            <span class="speed-toggle__metric-val" id="metricCLS">0.01</span>
+                            <span class="speed-toggle__metric-label">CLS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TECH STACK MARQUEE ========== -->
+    <section class="marquee">
+        <div class="marquee__track">
+            <div class="marquee__content">
+                <span class="marquee__tag">React</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">FastAPI</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Convex</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Next.js</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Python</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">TypeScript</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Node.js</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Tailwind CSS</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">React</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">FastAPI</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Convex</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Next.js</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Python</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">TypeScript</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Node.js</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Tailwind CSS</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__left" data-reveal>
+                    <span class="pill-label">About</span>
+                    <h2 class="display-heading">We Build for<br /><em>Momentum.</em></h2>
+                </div>
+                <div class="about__right" data-reveal>
+                    <p class="about__text">
+                        Zivrodev is a modern web agency focused on performance-first design and scalable development.
+                        Every project is structured to convert, load fast, and grow with your business.
+                    </p>
+                </div>
+            </div>
+
+            <div class="pillars">
+                <div class="pillar" data-reveal>
+                    <div class="pillar__icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <h3>Strategy</h3>
+                    <p>Purpose-driven planning that aligns business goals with digital execution.</p>
+                </div>
+                <div class="pillar" data-reveal>
+                    <div class="pillar__icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3>Design</h3>
+                    <p>Clean interfaces built for clarity, engagement, and measurable results.</p>
+                </div>
+                <div class="pillar" data-reveal>
+                    <div class="pillar__icon-wrap">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                            <line x1="14" y1="4" x2="10" y2="20" />
+                        </svg>
+                    </div>
+                    <h3>Development</h3>
+                    <p>Scalable code, fast load times, and a foundation ready for growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES (Bento Grid) ========== -->
+    <section class="services section section--dark" id="services">
+        <div class="container">
+            <span class="pill-label pill-label--light">Services</span>
+            <h2 class="display-heading display-heading--light">What We <em>Do.</em></h2>
+
+            <div class="bento-grid bento-grid--services">
+                <div class="bento-card bento-card--wide" data-reveal>
+                    <div class="bento-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3>Website Design</h3>
+                    <p>Bespoke interfaces that make first impressions count. Every pixel is intentional.</p>
+                </div>
+                <div class="bento-card" data-reveal>
+                    <div class="bento-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Web Applications</h3>
+                    <p>Custom platforms built for complexity and scale.</p>
+                </div>
+                <div class="bento-card" data-reveal>
+                    <div class="bento-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                    </div>
+                    <h3>E-Commerce</h3>
+                    <p>Storefronts engineered to convert browsers into buyers.</p>
+                </div>
+                <div class="bento-card" data-reveal>
+                    <div class="bento-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <h3>Performance</h3>
+                    <p>Speed tuning and core vitals for measurable competitive edge.</p>
+                </div>
+                <div class="bento-card bento-card--wide" data-reveal>
+                    <div class="bento-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Scaling & Support</h3>
+                    <p>Long-term maintenance, uptime monitoring, security patches, and iterative improvements to keep
+                        your digital presence sharp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TECH STACK (Secondary Marquee) ========== -->
+    <section class="marquee marquee--tech">
+        <div class="marquee__track">
+            <div class="marquee__content">
+                <span class="marquee__tag">HTML5</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">CSS3</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">JavaScript</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">TypeScript</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Convex</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Vite</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Vercel</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Node.js</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Python</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">AI Agents</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">WhatsApp API</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Razorpay</span>
+
+                <!-- Repeat for seamless loop -->
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">HTML5</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">CSS3</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">JavaScript</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">TypeScript</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Convex</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Vite</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Vercel</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Node.js</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Python</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">AI Agents</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">WhatsApp API</span>
+                <span class="marquee__tag marquee__tag--dot">●</span>
+                <span class="marquee__tag">Razorpay</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROCESS ========== -->
+    <section class="process section" id="process">
+        <div class="container">
+            <span class="pill-label">Process</span>
+            <h2 class="display-heading display-heading--center">Don't settle for<br /><em>ordinary,</em> shape it</h2>
+            <p class="section-sub">
+                Zivrodev brings together strategy, design, and engineering
+                in a single place, so you can launch faster and grow smarter.
+            </p>
+
+            <div class="process__steps">
+                <div class="process__step" data-reveal>
+                    <span class="process__num">01</span>
+                    <h3>Discover</h3>
+                    <p>Understand the business, audience, and goals.</p>
+                </div>
+                <div class="process__step" data-reveal>
+                    <span class="process__num">02</span>
+                    <h3>Design</h3>
+                    <p>Wireframes, prototypes, visual direction.</p>
+                </div>
+                <div class="process__step" data-reveal>
+                    <span class="process__num">03</span>
+                    <h3>Develop</h3>
+                    <p>Clean code, performance-first architecture.</p>
+                </div>
+                <div class="process__step" data-reveal>
+                    <span class="process__num">04</span>
+                    <h3>Launch</h3>
+                    <p>QA, deployment, analytics setup.</p>
+                </div>
+                <div class="process__step" data-reveal>
+                    <span class="process__num">05</span>
+                    <h3>Scale</h3>
+                    <p>Iterate, optimize, and expand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUST BAR ========== -->
+    <section class="trust section">
+        <div class="container">
+            <p class="trust__heading" data-reveal>From startups to growing brands,<br />results run on <em>Zivrodev</em>
+            </p>
+            <div class="trust__logos" data-reveal>
+                <span class="trust__logo">TechNova</span>
+                <span class="trust__logo">Vestra</span>
+                <span class="trust__logo">Kova</span>
+                <span class="trust__logo">Arcline</span>
+                <span class="trust__logo">Baseform</span>
+                <span class="trust__logo">Stridewell</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WORK (Bento Grid) ========== -->
+    <section class="work section" id="work">
+        <div class="container">
+            <span class="pill-label">Work</span>
+            <h2 class="display-heading">Selected <em>Projects.</em></h2>
+
+            <div class="bento-grid bento-grid--work">
+                <article class="bento-card bento-card--project bento-card--tall" data-reveal>
+                    <div class="project__thumb project__thumb--1"></div>
+                    <div class="project__info">
+                        <h3>Dentist Clinic</h3>
+                        <p>Modern, professional website for a dental clinic in Bangalore.</p>
+                        <a href="https://zivrodevadmin-netizen.github.io/Dentist-clinic/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                    </div>
+                </article>
+                <article class="bento-card bento-card--project" data-reveal>
+                    <div class="project__thumb project__thumb--2"></div>
+                    <div class="project__info">
+                        <h3>Salons & Spas</h3>
+                        <p>Premium salon & skincare website with booking integration.</p>
+                        <a href="https://zivrodevadmin-netizen.github.io/Salons-Spas/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                    </div>
+                </article>
+                <article class="bento-card bento-card--project" data-reveal>
+                    <div class="project__thumb project__thumb--3"></div>
+                    <div class="project__info">
+                        <h3>GYM</h3>
+                        <p>High-energy gym landing page with a dark, premium aesthetic.</p>
+                        <a href="https://zivrodevadmin-netizen.github.io/GYM/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                    </div>
+                </article>
+                <article class="bento-card bento-card--project" data-reveal>
+                    <div class="project__thumb project__thumb--4"></div>
+                    <div class="project__info">
+                        <h3>Wedding Planner</h3>
+                        <p>Elegant wedding planner website with package showcasing.</p>
+                        <a href="https://zivrodevadmin-netizen.github.io/wedding-planner/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BACKEND INTELLIGENCE ========== -->
+    <section class="backend section section--dark" id="backend">
+        <div class="container">
+            <span class="pill-label pill-label--light">Backend Intelligence</span>
+            <h2 class="display-heading display-heading--light">Powered by <em>Convex</em></h2>
+            <p class="section-sub section-sub--light">
+                Every Zivrodev project is backed by Convex — a reactive backend that syncs data in real-time,
+                scales automatically, and eliminates the need for manual API management.
+            </p>
+
+            <div class="backend__grid">
+                <div class="backend__code-block" data-reveal>
+                    <div class="code-header">
+                        <span class="code-header__dot"></span>
+                        <span class="code-header__dot"></span>
+                        <span class="code-header__dot"></span>
+                        <span class="code-header__filename">convex/schema.ts</span>
+                    </div>
+                    <pre class="code-content"><code><span class="code-kw">import</span> { defineSchema, defineTable } <span class="code-kw">from</span> <span class="code-str">"convex/server"</span>;
+<span class="code-kw">import</span> { v } <span class="code-kw">from</span> <span class="code-str">"convex/values"</span>;
+
+<span class="code-kw">export default</span> defineSchema({
+  <span class="code-fn">projects</span>: defineTable({
+    name: v.string(),
+    status: v.string(),
+    clientId: v.id(<span class="code-str">"clients"</span>),
+    progress: v.number(),
+  }),
+  <span class="code-fn">leads</span>: defineTable({
+    email: v.string(),
+    source: v.string(),
+    createdAt: v.number(),
+  }),
+  <span class="code-fn">contacts</span>: defineTable({
+    name: v.string(),
+    message: v.string(),
+    phone: v.optional(v.string()),
+  }),
+});</code></pre>
+                </div>
+                <div class="backend__code-block" data-reveal>
+                    <div class="code-header">
+                        <span class="code-header__dot"></span>
+                        <span class="code-header__dot"></span>
+                        <span class="code-header__dot"></span>
+                        <span class="code-header__filename">main.js</span>
+                    </div>
+                    <pre class="code-content"><code><span class="code-kw">import</span> { ConvexClient } <span class="code-kw">from</span> <span class="code-str">"convex/browser"</span>;
+<span class="code-kw">import</span> { api } <span class="code-kw">from</span> <span class="code-str">"./convex/_generated/api"</span>;
+
+<span class="code-kw">const</span> client = <span class="code-kw">new</span> <span class="code-fn">ConvexClient</span>(
+  import.meta.env.<span class="code-fn">VITE_CONVEX_URL</span>
+);
+
+<span class="code-kw">await</span> client.<span class="code-fn">mutation</span>(api.leads.createLead, {
+  email: <span class="code-str">"hello@zivrodev.com"</span>,
+  source: <span class="code-str">"website"</span>
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing section" id="pricing">
+        <div class="container">
+            <span class="pill-label">Pricing</span>
+            <h2 class="display-heading display-heading--center">Transparent Plans.<br /><em>Built for Growth.</em></h2>
+            <p class="section-sub">Choose the package that fits your ambition. No hidden fees, no surprises.</p>
+
+            <div class="pricing__grid">
+                <!-- Package 1 -->
+                <div class="pricing__card" data-reveal>
+                    <div class="pricing__card-header">
+                        <h3 class="pricing__card-title">AI Launch Website</h3>
+                        <div class="pricing__card-price">₹15,000</div>
+                        <p class="pricing__card-desc">Perfect for local businesses and personal brands starting online.
+                        </p>
+                    </div>
+                    <ul class="pricing__card-features">
+                        <li>1–5 Pages Website</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>WhatsApp Integration</li>
+                        <li>Lead Capture Forms</li>
+                        <li>Basic SEO Setup</li>
+                        <li>AI-Generated Content</li>
+                        <li>30 Days Support</li>
+                    </ul>
+                    <a href="#contact" class="btn--outline btn btn--full magnetic-btn">Launch My Website</a>
+                </div>
+
+                <!-- Package 2 (Featured) -->
+                <div class="pricing__card pricing__card--featured" data-reveal>
+                    <span class="pricing__badge">Most Popular</span>
+                    <div class="pricing__card-header">
+                        <h3 class="pricing__card-title">AI Growth System</h3>
+                        <div class="pricing__card-price">₹35,000</div>
+                        <p class="pricing__card-desc">For businesses that want consistent leads and growth.</p>
+                    </div>
+                    <ul class="pricing__card-features">
+                        <li>5–10 Pages Website</li>
+                        <li>Custom UI/UX Design</li>
+                        <li>Admin Dashboard</li>
+                        <li>Blog System</li>
+                        <li>WhatsApp Automation</li>
+                        <li>Google Business Optimization</li>
+                        <li>Analytics Integration</li>
+                        <li>Basic SEO Optimization</li>
+                        <li>3 Months Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary btn--full magnetic-btn">Grow My Business</a>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="pricing__card" data-reveal>
+                    <div class="pricing__card-header">
+                        <h3 class="pricing__card-title">AI Commerce System</h3>
+                        <div class="pricing__card-price">₹50,000<span class="pricing__card-price-plus">+</span></div>
+                        <p class="pricing__card-desc">Complete e-commerce system for serious sellers.</p>
+                    </div>
+                    <ul class="pricing__card-features">
+                        <li>Product Management Dashboard</li>
+                        <li>Razorpay Payment Integration</li>
+                        <li>Order Management System</li>
+                        <li>Email Automation Setup</li>
+                        <li>Cart & Checkout System</li>
+                        <li>SEO Optimization</li>
+                        <li>3 Months Support</li>
+                    </ul>
+                    <a href="#contact" class="btn--outline btn btn--full magnetic-btn">Start Selling Online</a>
+                </div>
+
+                <!-- Package 4 -->
+                <div class="pricing__card" data-reveal>
+                    <div class="pricing__card-header">
+                        <h3 class="pricing__card-title">AI Growth Retainer</h3>
+                        <div class="pricing__card-price pricing__card-price--sm">₹4,000 – ₹8,000<span
+                                class="pricing__card-price-unit"> / month</span></div>
+                        <p class="pricing__card-desc">Ongoing optimization and growth support.</p>
+                    </div>
+                    <ul class="pricing__card-features">
+                        <li>Hosting & Maintenance</li>
+                        <li>Performance Optimization</li>
+                        <li>SEO Updates</li>
+                        <li>Content Updates</li>
+                        <li>AI Chatbot Integration</li>
+                        <li>Monthly Performance Report</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="btn--outline btn btn--full magnetic-btn">Get Monthly Growth</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq section section--dark" id="faq">
+        <div class="container">
+            <span class="pill-label pill-label--light">FAQ</span>
+            <h2 class="display-heading display-heading--center display-heading--light">Questions? <em>Answers.</em></h2>
+
+            <div class="faq__list">
+                <div class="faq__item" data-reveal>
+                    <button class="faq__question">
+                        <span>How long does development take?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Most projects are delivered within 7–21 days depending on complexity. A simple 5-page website
+                            takes about a week, while advanced systems with dashboards and automation take 2–3 weeks.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__item" data-reveal>
+                    <button class="faq__question">
+                        <span>Do you provide hosting?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Yes! We offer hosting as part of our Growth Retainer plan. For one-time projects, we help you
+                            set up hosting on reliable platforms like Vercel, Netlify, or your preferred provider.</p>
+                    </div>
+                </div>
+                <div class="faq__item" data-reveal>
+                    <button class="faq__question">
+                        <span>Can I upgrade later?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Absolutely. All our sites are built with scalable architecture. You can start with AI Launch
+                            and upgrade to Growth System or Commerce anytime — we simply build on top of what's already
+                            there.</p>
+                    </div>
+                </div>
+                <div class="faq__item" data-reveal>
+                    <button class="faq__question">
+                        <span>Do you offer custom solutions?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Yes. Beyond our packages, we build fully custom web applications, SaaS platforms, and
+                            enterprise solutions. Reach out and we'll scope your project together.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="faq__closing">Smart Websites. Real Growth.</p>
+        </div>
+    </section>
+
+    <!-- ========== AI AGENTS ========== -->
+    <section class="ai-agents section" id="ai-agents">
+        <div class="container">
+            <span class="pill-label">Coming Soon</span>
+            <h2 class="display-heading display-heading--center">Upcoming <em>AI Agents</em></h2>
+            <p class="section-sub">Intelligent agents built to automate, optimize, and scale your digital business —
+                deploying soon to Zivrodev projects.</p>
+
+            <div class="agents__grid">
+                <div class="agent-card" data-reveal>
+                    <div class="agent-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <span class="agent-card__badge">Coming Soon</span>
+                    <h3>LeadBot AI</h3>
+                    <p>24/7 conversational AI that qualifies leads, answers FAQs, and schedules calls automatically.</p>
+                </div>
+                <div class="agent-card" data-reveal>
+                    <div class="agent-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                    </div>
+                    <span class="agent-card__badge">Coming Soon</span>
+                    <h3>SEO Agent</h3>
+                    <p>Autonomous agent that audits, optimizes meta tags, generates content, and tracks rankings weekly.
+                    </p>
+                </div>
+                <div class="agent-card" data-reveal>
+                    <div class="agent-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                            <line x1="1" y1="10" x2="23" y2="10" />
+                        </svg>
+                    </div>
+                    <span class="agent-card__badge">Coming Soon</span>
+                    <h3>Commerce Pilot</h3>
+                    <p>Manages inventory, pricing, abandoned cart recovery, and order tracking with AI precision.</p>
+                </div>
+                <div class="agent-card" data-reveal>
+                    <div class="agent-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <span class="agent-card__badge">Coming Soon</span>
+                    <h3>Analytics AI</h3>
+                    <p>Interprets traffic data, generates weekly reports, and recommends growth actions automatically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta section section--dark" id="contact">
+        <div class="container cta__inner">
+            <div class="cta__icon" data-reveal>
+                <svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="24" cy="24" r="22" />
+                    <path d="M16 24l6 6 10-12" />
+                </svg>
+            </div>
+            <h2 class="cta__heading" data-reveal>Ready to <em>Launch?</em></h2>
+            <p class="cta__sub" data-reveal>Let's turn your idea into a product people use.</p>
+            <div class="cta__buttons" data-reveal>
+                <a href="#" class="btn btn--primary-light btn--xl magnetic-btn" data-open-payment>Start Your
+                    Project</a>
+                <a href="#work" class="btn--outline-light btn btn--xl magnetic-btn">View Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col footer__brand">
+                <a href="#" class="footer__logo">
+                    <svg viewBox="0 0 36 36" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <rect x="2" y="2" width="18" height="18" rx="3" />
+                        <rect x="16" y="16" width="18" height="18" rx="3" />
+                        <line x1="4" y1="18" x2="18" y2="4" stroke-width="2.5" />
+                        <line x1="18" y1="32" x2="32" y2="18" stroke-width="2.5" />
+                    </svg>
+                    Zivrodev
+                </a>
+            </div>
+            <div class="footer__col">
+                <span class="footer__col-label">Company</span>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer__col">
+                <span class="footer__col-label">Services</span>
+                <a href="#services">Website Design</a>
+                <a href="#services">Web Applications</a>
+                <a href="#services">E-Commerce</a>
+                <a href="#services">Performance</a>
+            </div>
+            <div class="footer__col">
+                <span class="footer__col-label">Connect</span>
+                <a href="#">Twitter / X</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Dribbble</a>
+                <a href="mailto:hello@zivrodev.com">hello@zivrodev.com</a>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 Zivrodev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FAB ========== -->
+    <a href="https://wa.me/917200000000?text=I'm%20interested%20in%20a%20Zivrodev%20project." class="whatsapp-fab"
+        id="whatsappFab" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="#FFF4B7">
+            <path
+                d="M16.004 0h-.008C7.174 0 0 7.175 0 16c0 3.498 1.131 6.742 3.052 9.375L1.054 31.22l6.078-1.95A15.93 15.93 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.31 22.614c-.39 1.097-1.932 2.009-3.165 2.275-.845.18-1.947.322-5.66-1.217-4.752-1.97-7.81-6.79-8.046-7.106-.226-.316-1.9-2.53-1.9-4.826s1.202-3.423 1.63-3.89c.39-.427.924-.606 1.235-.606.15 0 .285.007.406.013.428.018.643.043 .925.716.353.843 1.213 2.96 1.318 3.177.106.218.21.516.06.81-.14.302-.264.437-.48.68-.218.243-.424.428-.64.69-.198.235-.42.487-.18.917.24.424 1.067 1.757 2.29 2.847 1.573 1.4 2.9 1.834 3.312 2.04.413.206.654.172.896-.104.25-.285 1.07-1.248 1.356-1.675.278-.428.564-.353.943-.212.385.14 2.442 1.152 2.862 1.362.42.21.7.316.803.49.1.174.1 1.012-.29 2.108z" />
+        </svg>
+    </a>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <path fill="#FFF" stroke="#000" stroke-width="2"
+                d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z">
+            </path>
+        </svg>
+    </div>
+
+    <!-- Payment Gateway Demo Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-modal__overlay" id="paymentOverlay"></div>
+        <div class="payment-modal__card">
+            <button class="payment-modal__close" id="paymentClose" aria-label="Close">&times;</button>
+            <div class="payment-modal__header">
+                <svg viewBox="0 0 36 36" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <rect x="2" y="2" width="18" height="18" rx="3" />
+                    <rect x="16" y="16" width="18" height="18" rx="3" />
+                    <line x1="4" y1="18" x2="18" y2="4" stroke-width="2.5" />
+                    <line x1="18" y1="32" x2="32" y2="18" stroke-width="2.5" />
+                </svg>
+                <span class="payment-modal__brand">Zivrodev</span>
+            </div>
+            <div class="payment-modal__body" id="paymentBody">
+                <p class="payment-modal__amount">₹15,000</p>
+                <p class="payment-modal__desc">AI Launch Website — Starter Plan</p>
+                <div class="payment-modal__field">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="hello@example.com" id="paymentEmail" required>
+                </div>
+                <div class="payment-modal__field">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="4242 4242 4242 4242" maxlength="19" id="cardNumber">
+                </div>
+                <div class="payment-modal__row">
+                    <div class="payment-modal__field">
+                        <label>Expiry</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5" id="cardExpiry">
+                    </div>
+                    <div class="payment-modal__field">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123" maxlength="3" id="cardCVV">
+                    </div>
+                </div>
+                <button class="btn btn--primary btn--full payment-modal__pay" id="payBtn">Pay ₹15,000</button>
+                <p class="payment-modal__disclaimer">🔒 This is a demo — no real payment will be processed.</p>
+            </div>
+            <!-- Success state (hidden by default) -->
+            <div class="payment-modal__success" id="paymentSuccess">
+                <div class="payment-modal__check">
+                    <svg viewBox="0 0 52 52" width="64" height="64">
+                        <circle cx="26" cy="26" r="25" fill="none" stroke="var(--teal)" stroke-width="2" />
+                        <path fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="payment-check-path" />
+                    </svg>
+                </div>
+                <h3>Payment Successful!</h3>
+                <p>Thank you for choosing Zivrodev.</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
