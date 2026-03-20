@@ -927,7 +927,7 @@ em {
 /* Bento Work Grid */
 .bento-grid--work {
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: minmax(280px, auto);
+  grid-auto-rows: 1fr;
 }
 
 .bento-card--project {
