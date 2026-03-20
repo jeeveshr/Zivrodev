@@ -482,10 +482,9 @@
     <section class="backend section" id="backend">
         <div class="container">
             <span class="pill-label">Backend Intelligence</span>
-            <h2 class="display-heading">Powered by <em>Convex</em></h2>
+            <h2 class="display-heading">Powered by <em>Supabase</em></h2>
             <p class="section-sub">
-                Every Zivrodev project is backed by Convex — a reactive backend that syncs data in real-time,
-                scales automatically, and eliminates the need for manual API management.
+                Every Zivrodev project is backed by Supabase — an open source Firebase alternative that provides a dedicated Postgres database, authentication, and instant APIs.
             </p>
 
             <div class="backend__grid">
@@ -494,29 +493,14 @@
                         <span class="code-header__dot"></span>
                         <span class="code-header__dot"></span>
                         <span class="code-header__dot"></span>
-                        <span class="code-header__filename">convex/schema.ts</span>
+                        <span class="code-header__filename">supabase/client.ts</span>
                     </div>
-                    <pre class="code-content"><code><span class="code-kw">import</span> { defineSchema, defineTable } <span class="code-kw">from</span> <span class="code-str">"convex/server"</span>;
-<span class="code-kw">import</span> { v } <span class="code-kw">from</span> <span class="code-str">"convex/values"</span>;
+                    <pre class="code-content"><code><span class="code-kw">import</span> { createClient } <span class="code-kw">from</span> <span class="code-str">'@supabase/supabase-js'</span>;
 
-<span class="code-kw">export default</span> defineSchema({
-  <span class="code-fn">projects</span>: defineTable({
-    name: v.string(),
-    status: v.string(),
-    clientId: v.id(<span class="code-str">"clients"</span>),
-    progress: v.number(),
-  }),
-  <span class="code-fn">leads</span>: defineTable({
-    email: v.string(),
-    source: v.string(),
-    createdAt: v.number(),
-  }),
-  <span class="code-fn">contacts</span>: defineTable({
-    name: v.string(),
-    message: v.string(),
-    phone: v.optional(v.string()),
-  }),
-});</code></pre>
+<span class="code-kw">export const</span> supabase = <span class="code-fn">createClient</span>(
+  import.meta.env.<span class="code-fn">VITE_SUPABASE_URL</span>,
+  import.meta.env.<span class="code-fn">VITE_SUPABASE_ANON_KEY</span>
+);</code></pre>
                 </div>
                 <div class="backend__code-block" data-reveal>
                     <div class="code-header">
@@ -525,17 +509,13 @@
                         <span class="code-header__dot"></span>
                         <span class="code-header__filename">main.js</span>
                     </div>
-                    <pre class="code-content"><code><span class="code-kw">import</span> { ConvexClient } <span class="code-kw">from</span> <span class="code-str">"convex/browser"</span>;
-<span class="code-kw">import</span> { api } <span class="code-kw">from</span> <span class="code-str">"./convex/_generated/api"</span>;
+                    <pre class="code-content"><code><span class="code-kw">import</span> { supabase } <span class="code-kw">from</span> <span class="code-str">"./supabase/client.js"</span>;
 
-<span class="code-kw">const</span> client = <span class="code-kw">new</span> <span class="code-fn">ConvexClient</span>(
-  import.meta.env.<span class="code-fn">VITE_CONVEX_URL</span>
-);
-
-<span class="code-kw">await</span> client.<span class="code-fn">mutation</span>(api.leads.createLead, {
-  email: <span class="code-str">"hello@zivrodev.com"</span>,
-  source: <span class="code-str">"website"</span>
-});</code></pre>
+<span class="code-kw">const</span> { data, error } = <span class="code-kw">await</span> supabase
+  .<span class="code-fn">from</span>(<span class="code-str">'leads'</span>)
+  .<span class="code-fn">insert</span>([
+    { email: <span class="code-str">"hello@zivrodev.com"</span>, source: <span class="code-str">"website"</span> }
+  ]);</code></pre>
                 </div>
             </div>
         </div>
@@ -610,24 +590,30 @@
                     <a href="#contact" class="btn btn--ghost btn--full magnetic-btn">Start Selling Online</a>
                 </div>
 
-                <!-- Package 4 -->
-                <div class="pricing__card" data-reveal>
+            </div>
+
+            <!-- Optional Retainer Add-on -->
+            <div class="pricing__add-on" data-reveal>
+                <div class="pricing__card pricing__card--horizontal">
                     <div class="pricing__card-header">
                         <h3 class="pricing__card-title">AI Growth Retainer</h3>
+                        <p class="pricing__card-desc">Ongoing optimization and growth support.</p>
                         <div class="pricing__card-price pricing__card-price--sm">₹4,000 – ₹8,000<span
                                 class="pricing__card-price-unit"> / month</span></div>
-                        <p class="pricing__card-desc">Ongoing optimization and growth support.</p>
                     </div>
-                    <ul class="pricing__card-features">
-                        <li>Hosting & Maintenance</li>
-                        <li>Performance Optimization</li>
-                        <li>SEO Updates</li>
-                        <li>Content Updates</li>
-                        <li>AI Chatbot Integration</li>
-                        <li>Monthly Performance Report</li>
-                        <li>Priority Support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn--ghost btn--full magnetic-btn">Get Monthly Growth</a>
+                    <div class="pricing__horizontal-content">
+                        <ul class="pricing__card-features">
+                            <li>Hosting & Maintenance</li>
+                            <li>Performance Optimization</li>
+                            <li>SEO & Content Updates</li>
+                        </ul>
+                        <ul class="pricing__card-features">
+                            <li>AI Chatbot Integration</li>
+                            <li>Monthly Performance Report</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--ghost magnetic-btn">Get Monthly Growth</a>
+                    </div>
                 </div>
             </div>
         </div>

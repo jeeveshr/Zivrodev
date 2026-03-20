@@ -1089,7 +1089,7 @@ em {
 
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   align-items: start;
 }
@@ -1205,6 +1205,26 @@ em {
   color: var(--accent);
   font-weight: 700;
   font-size: 0.8rem;
+}
+
+.pricing__add-on {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.pricing__card--horizontal {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem;
+}
+
+.pricing__horizontal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /* ============================================================
@@ -1785,6 +1805,16 @@ em {
     transform: scale(1.02) translateY(-6px);
   }
 
+  .pricing__card--horizontal {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .pricing__horizontal-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .agents__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1889,6 +1919,10 @@ em {
 
   .pricing__card--featured:hover {
     transform: translateY(-6px);
+  }
+
+  .pricing__horizontal-content {
+    grid-template-columns: 1fr;
   }
 
   .agents__grid {
