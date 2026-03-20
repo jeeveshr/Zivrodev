@@ -10,25 +10,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,200;1,6..72,300;1,6..72,400&family=Instrument+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+    <!-- ========== NOISE OVERLAY ========== -->
+    <div class="noise-overlay" aria-hidden="true">
+        <svg width="100%" height="100%">
+            <filter id="noiseFilter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+        </svg>
+    </div>
+
     <!-- ========== NAV ========== -->
     <nav class="nav" id="nav">
         <div class="nav__inner">
             <a href="#" class="nav__logo">
-                <!-- Z Monogram: two interlocking squares -->
-                <svg class="nav__logo-icon" viewBox="0 0 36 36" width="32" height="32" fill="none" stroke="currentColor"
-                    stroke-width="2.2">
-                    <rect x="2" y="2" width="18" height="18" rx="3" />
-                    <rect x="16" y="16" width="18" height="18" rx="3" />
-                    <line x1="4" y1="18" x2="18" y2="4" stroke-width="2.5" />
-                    <line x1="18" y1="32" x2="32" y2="18" stroke-width="2.5" />
-                </svg>
+                <div class="nav__logo-circle">
+                    <svg class="nav__logo-icon" viewBox="0 0 36 36" width="20" height="20" fill="none"
+                        stroke="currentColor" stroke-width="2.2">
+                        <rect x="2" y="2" width="18" height="18" rx="3" />
+                        <rect x="16" y="16" width="18" height="18" rx="3" />
+                        <line x1="4" y1="18" x2="18" y2="4" stroke-width="2.5" />
+                        <line x1="18" y1="32" x2="32" y2="18" stroke-width="2.5" />
+                    </svg>
+                </div>
                 Zivrodev
             </a>
 
@@ -36,117 +47,60 @@
                 <span></span><span></span><span></span>
             </button>
 
-            <ul class="nav__links" id="navLinks">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#work">Work</a></li>
-            </ul>
+            <div class="nav__pill" id="navLinks">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#work">Work</a>
+            </div>
 
             <div class="nav__actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                    <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5" />
-                        <line x1="12" y1="1" x2="12" y2="3" />
-                        <line x1="12" y1="21" x2="12" y2="23" />
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                        <line x1="1" y1="12" x2="3" y2="12" />
-                        <line x1="21" y1="12" x2="23" y2="12" />
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                    </svg>
-                    <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                    </svg>
-                </button>
-                <a href="#work" class="btn--outline btn">View Work</a>
-                <a href="#contact" class="btn btn--primary magnetic-btn">Start a Project</a>
+                <a href="#contact" class="btn btn--accent magnetic-btn">Start a Project</a>
             </div>
         </div>
     </nav>
 
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
-        <!-- Background Video -->
-        <video class="hero__video" autoplay muted loop playsinline>
-            <source src="https://cdn.coverr.co/videos/coverr-abstract-digital-particles/1080p.mp4" type="video/mp4">
-        </video>
-
         <div class="hero__inner">
             <div class="hero__text">
                 <h1 class="hero__heading" data-reveal>
-                    Websites built<br />at the pace<br /><em>of growth</em>
+                    Websites built<br />at the pace<br />of <em>growth</em>
                 </h1>
-                <div class="brand-3d" data-reveal>
-                    <span class="brand-3d__text" aria-hidden="true">Zivrodev</span>
-                </div>
                 <p class="hero__sub" data-reveal>
                     In a world of templated web experiences,
                     Zivrodev turns strategy into digital momentum.
                 </p>
+                <div class="hero__social-proof" data-reveal>
+                    <div class="hero__avatars">
+                        <div class="hero__avatar">T</div>
+                        <div class="hero__avatar">V</div>
+                        <div class="hero__avatar">K</div>
+                        <div class="hero__avatar">A</div>
+                    </div>
+                    <span class="hero__proof-text">Trusted by 20+ brands</span>
+                </div>
                 <div class="hero__ctas" data-reveal>
-                    <a href="#" class="btn btn--primary btn--lg magnetic-btn" data-open-payment>Start Your Project</a>
-                    <a href="#work" class="btn--outline btn btn--lg magnetic-btn">View Work</a>
+                    <a href="#" class="btn btn--accent btn--lg magnetic-btn" data-open-payment>Start Your Project</a>
+                    <a href="#work" class="btn btn--ghost btn--lg magnetic-btn">View Work</a>
                 </div>
             </div>
-            <div class="hero__visual">
-                <div class="hero__card hero__card--1" data-float="1" data-reveal>
-                    <span class="hero__card-label">PROJECT STATUS</span>
-                    <strong>NextGen SaaS</strong>
-                    <div class="hero__card-bar">
-                        <div class="hero__card-bar-fill" style="width:78%"></div>
-                    </div>
-                    <span class="hero__card-meta">78% complete</span>
+            <div class="hero__visual" data-reveal>
+                <div class="hero__image-arch">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&h=800&fit=crop"
+                        alt="Abstract digital art" class="hero__arch-img" />
                 </div>
-                <div class="hero__card hero__card--2" data-float="2" data-reveal>
-                    <span class="hero__card-label">PERFORMANCE</span>
-                    <strong class="hero__card-big">98</strong>
-                    <span class="hero__card-meta">Lighthouse Score</span>
-                </div>
-                <div class="hero__card hero__card--3" data-float="3" data-reveal>
-                    <span class="hero__card-label">CONVERSION</span>
-                    <strong class="hero__card-big hero__card-big--accent">+42%</strong>
-                    <span class="hero__card-meta">Avg. uplift</span>
-                </div>
-
-                <!-- Speed Toggle Widget -->
-                <div class="speed-toggle" id="speedToggle" data-reveal>
-                    <div class="speed-toggle__header">
-                        <span class="speed-toggle__label">LIVE PERFORMANCE</span>
-                        <button class="speed-toggle__btn" id="speedBtn">
-                            <span class="speed-toggle__indicator"></span>
-                        </button>
-                    </div>
-                    <div class="speed-toggle__gauge">
-                        <svg viewBox="0 0 120 70" class="speed-toggle__svg">
-                            <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="var(--border)" stroke-width="8"
-                                stroke-linecap="round" />
-                            <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="var(--teal)" stroke-width="8"
-                                stroke-linecap="round" class="speed-toggle__arc" id="speedArc" />
-                        </svg>
-                        <span class="speed-toggle__score" id="speedScore">98</span>
-                    </div>
-                    <div class="speed-toggle__metrics">
-                        <div class="speed-toggle__metric">
-                            <span class="speed-toggle__metric-val" id="metricFCP">0.8s</span>
-                            <span class="speed-toggle__metric-label">FCP</span>
-                        </div>
-                        <div class="speed-toggle__metric">
-                            <span class="speed-toggle__metric-val" id="metricLCP">1.2s</span>
-                            <span class="speed-toggle__metric-label">LCP</span>
-                        </div>
-                        <div class="speed-toggle__metric">
-                            <span class="speed-toggle__metric-val" id="metricCLS">0.01</span>
-                            <span class="speed-toggle__metric-label">CLS</span>
-                        </div>
-                    </div>
+                <div class="hero__sticky-note">
+                    <span class="hero__sticky-label">Performance Score</span>
+                    <strong class="hero__sticky-big">98</strong>
+                    <span class="hero__sticky-meta">Lighthouse Average</span>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ========== SERRATED DIVIDER ========== -->
+    <div class="serrated-edge"></div>
 
     <!-- ========== TECH STACK MARQUEE ========== -->
     <section class="marquee">
@@ -241,66 +195,85 @@
         </div>
     </section>
 
-    <!-- ========== SERVICES (Bento Grid) ========== -->
-    <section class="services section section--dark" id="services">
-        <div class="container">
-            <span class="pill-label pill-label--light">Services</span>
-            <h2 class="display-heading display-heading--light">What We <em>Do.</em></h2>
+    <!-- ========== SERRATED DIVIDER ========== -->
+    <div class="serrated-edge"></div>
 
-            <div class="bento-grid bento-grid--services">
-                <div class="bento-card bento-card--wide" data-reveal>
-                    <div class="bento-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18" />
-                            <path d="M9 21V9" />
-                        </svg>
+    <!-- ========== SERVICES (Tabbed Bento) ========== -->
+    <section class="services section" id="services">
+        <div class="container">
+            <!-- Folder Tabs -->
+            <div class="folder-tabs">
+                <button class="folder-tab folder-tab--active" data-tab="all">
+                    <span>All Services</span>
+                </button>
+                <button class="folder-tab" data-tab="design">
+                    <span>Design</span>
+                </button>
+                <button class="folder-tab" data-tab="dev">
+                    <span>Development</span>
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="services__content">
+                <div class="services__grid-bg"></div>
+                <h2 class="display-heading">What We <em>Do.</em></h2>
+
+                <div class="bento-grid bento-grid--services">
+                    <div class="bento-card bento-card--wide" data-reveal>
+                        <div class="bento-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M3 9h18" />
+                                <path d="M9 21V9" />
+                            </svg>
+                        </div>
+                        <h3>Website Design</h3>
+                        <p>Bespoke interfaces that make first impressions count. Every pixel is intentional.</p>
                     </div>
-                    <h3>Website Design</h3>
-                    <p>Bespoke interfaces that make first impressions count. Every pixel is intentional.</p>
-                </div>
-                <div class="bento-card" data-reveal>
-                    <div class="bento-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
+                    <div class="bento-card" data-reveal>
+                        <div class="bento-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3>Web Applications</h3>
+                        <p>Custom platforms built for complexity and scale.</p>
                     </div>
-                    <h3>Web Applications</h3>
-                    <p>Custom platforms built for complexity and scale.</p>
-                </div>
-                <div class="bento-card" data-reveal>
-                    <div class="bento-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="9" cy="21" r="1" />
-                            <circle cx="20" cy="21" r="1" />
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                        </svg>
+                    <div class="bento-card" data-reveal>
+                        <div class="bento-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                        </div>
+                        <h3>E-Commerce</h3>
+                        <p>Storefronts engineered to convert browsers into buyers.</p>
                     </div>
-                    <h3>E-Commerce</h3>
-                    <p>Storefronts engineered to convert browsers into buyers.</p>
-                </div>
-                <div class="bento-card" data-reveal>
-                    <div class="bento-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                        </svg>
+                    <div class="bento-card" data-reveal>
+                        <div class="bento-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                        </div>
+                        <h3>Performance</h3>
+                        <p>Speed tuning and core vitals for measurable competitive edge.</p>
                     </div>
-                    <h3>Performance</h3>
-                    <p>Speed tuning and core vitals for measurable competitive edge.</p>
-                </div>
-                <div class="bento-card bento-card--wide" data-reveal>
-                    <div class="bento-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
+                    <div class="bento-card bento-card--wide" data-reveal>
+                        <div class="bento-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                        </div>
+                        <h3>Scaling & Support</h3>
+                        <p>Long-term maintenance, uptime monitoring, security patches, and iterative improvements to keep
+                            your digital presence sharp.</p>
                     </div>
-                    <h3>Scaling & Support</h3>
-                    <p>Long-term maintenance, uptime monitoring, security patches, and iterative improvements to keep
-                        your digital presence sharp.</p>
                 </div>
             </div>
         </div>
@@ -419,43 +392,86 @@
         </div>
     </section>
 
-    <!-- ========== WORK (Bento Grid) ========== -->
+    <!-- ========== SERRATED DIVIDER ========== -->
+    <div class="serrated-edge"></div>
+
+    <!-- ========== WORK (Showcase Grid) ========== -->
     <section class="work section" id="work">
         <div class="container">
             <span class="pill-label">Work</span>
             <h2 class="display-heading">Selected <em>Projects.</em></h2>
 
-            <div class="bento-grid bento-grid--work">
-                <article class="bento-card bento-card--project" data-reveal>
-                    <div class="project__thumb project__thumb--1"></div>
-                    <div class="project__info">
-                        <h3>Dentist Clinic</h3>
+            <div class="showcase-grid">
+                <article class="showcase-card" data-reveal>
+                    <div class="showcase-card__image">
+                        <img src="assets/dentist-clinic.png" alt="Dentist Clinic Project" />
+                        <div class="catalog-label">
+                            <div class="catalog-label__top">
+                                <span class="catalog-label__fig">Fig. 1A</span>
+                                <span class="catalog-label__dot"></span>
+                            </div>
+                            <span class="catalog-label__title">Dentist Clinic</span>
+                        </div>
+                    </div>
+                    <div class="showcase-card__info">
+                        <h3><em>Dentist Clinic</em></h3>
                         <p>Modern, professional website for a dental clinic in Bangalore.</p>
-                        <a href="https://zivrodevadmin-netizen.github.io/Dentist-clinic/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                        <a href="https://zivrodevadmin-netizen.github.io/Dentist-clinic/" target="_blank"
+                            rel="noopener noreferrer" class="link-arrow">View Demo →</a>
                     </div>
                 </article>
-                <article class="bento-card bento-card--project" data-reveal>
-                    <div class="project__thumb project__thumb--2"></div>
-                    <div class="project__info">
-                        <h3>Salons & Spas</h3>
+                <article class="showcase-card showcase-card--offset" data-reveal>
+                    <div class="showcase-card__image">
+                        <img src="assets/salons-spas.png" alt="Salons & Spas Project" />
+                        <div class="catalog-label">
+                            <div class="catalog-label__top">
+                                <span class="catalog-label__fig">Fig. 2B</span>
+                                <span class="catalog-label__dot"></span>
+                            </div>
+                            <span class="catalog-label__title">Salons & Spas</span>
+                        </div>
+                    </div>
+                    <div class="showcase-card__info">
+                        <h3><em>Salons & Spas</em></h3>
                         <p>Premium salon & skincare website with booking integration.</p>
-                        <a href="https://zivrodevadmin-netizen.github.io/Salons-Spas/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                        <a href="https://zivrodevadmin-netizen.github.io/Salons-Spas/" target="_blank"
+                            rel="noopener noreferrer" class="link-arrow">View Demo →</a>
                     </div>
                 </article>
-                <article class="bento-card bento-card--project" data-reveal>
-                    <div class="project__thumb project__thumb--3"></div>
-                    <div class="project__info">
-                        <h3>GYM</h3>
+                <article class="showcase-card" data-reveal>
+                    <div class="showcase-card__image">
+                        <img src="assets/gym.png" alt="GYM Project" />
+                        <div class="catalog-label">
+                            <div class="catalog-label__top">
+                                <span class="catalog-label__fig">Fig. 3C</span>
+                                <span class="catalog-label__dot"></span>
+                            </div>
+                            <span class="catalog-label__title">GYM</span>
+                        </div>
+                    </div>
+                    <div class="showcase-card__info">
+                        <h3><em>GYM</em></h3>
                         <p>High-energy gym landing page with a dark, premium aesthetic.</p>
-                        <a href="https://zivrodevadmin-netizen.github.io/GYM/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                        <a href="https://zivrodevadmin-netizen.github.io/GYM/" target="_blank"
+                            rel="noopener noreferrer" class="link-arrow">View Demo →</a>
                     </div>
                 </article>
-                <article class="bento-card bento-card--project" data-reveal>
-                    <div class="project__thumb project__thumb--4"></div>
-                    <div class="project__info">
-                        <h3>Wedding Planner</h3>
+                <article class="showcase-card" data-reveal>
+                    <div class="showcase-card__image">
+                        <img src="assets/wedding-planner.png" alt="Wedding Planner Project" />
+                        <div class="catalog-label">
+                            <div class="catalog-label__top">
+                                <span class="catalog-label__fig">Fig. 4D</span>
+                                <span class="catalog-label__dot"></span>
+                            </div>
+                            <span class="catalog-label__title">Wedding Planner</span>
+                        </div>
+                    </div>
+                    <div class="showcase-card__info">
+                        <h3><em>Wedding Planner</em></h3>
                         <p>Elegant wedding planner website with package showcasing.</p>
-                        <a href="https://zivrodevadmin-netizen.github.io/wedding-planner/" target="_blank" rel="noopener noreferrer" class="link-arrow">View Demo →</a>
+                        <a href="https://zivrodevadmin-netizen.github.io/wedding-planner/" target="_blank"
+                            rel="noopener noreferrer" class="link-arrow">View Demo →</a>
                     </div>
                 </article>
             </div>
@@ -463,11 +479,11 @@
     </section>
 
     <!-- ========== BACKEND INTELLIGENCE ========== -->
-    <section class="backend section section--dark" id="backend">
+    <section class="backend section" id="backend">
         <div class="container">
-            <span class="pill-label pill-label--light">Backend Intelligence</span>
-            <h2 class="display-heading display-heading--light">Powered by <em>Convex</em></h2>
-            <p class="section-sub section-sub--light">
+            <span class="pill-label">Backend Intelligence</span>
+            <h2 class="display-heading">Powered by <em>Convex</em></h2>
+            <p class="section-sub">
                 Every Zivrodev project is backed by Convex — a reactive backend that syncs data in real-time,
                 scales automatically, and eliminates the need for manual API management.
             </p>
@@ -550,7 +566,7 @@
                         <li>AI-Generated Content</li>
                         <li>30 Days Support</li>
                     </ul>
-                    <a href="#contact" class="btn--outline btn btn--full magnetic-btn">Launch My Website</a>
+                    <a href="#contact" class="btn btn--ghost btn--full magnetic-btn">Launch My Website</a>
                 </div>
 
                 <!-- Package 2 (Featured) -->
@@ -572,7 +588,7 @@
                         <li>Basic SEO Optimization</li>
                         <li>3 Months Support</li>
                     </ul>
-                    <a href="#contact" class="btn btn--primary btn--full magnetic-btn">Grow My Business</a>
+                    <a href="#contact" class="btn btn--accent btn--full magnetic-btn">Grow My Business</a>
                 </div>
 
                 <!-- Package 3 -->
@@ -591,7 +607,7 @@
                         <li>SEO Optimization</li>
                         <li>3 Months Support</li>
                     </ul>
-                    <a href="#contact" class="btn--outline btn btn--full magnetic-btn">Start Selling Online</a>
+                    <a href="#contact" class="btn btn--ghost btn--full magnetic-btn">Start Selling Online</a>
                 </div>
 
                 <!-- Package 4 -->
@@ -611,17 +627,20 @@
                         <li>Monthly Performance Report</li>
                         <li>Priority Support</li>
                     </ul>
-                    <a href="#contact" class="btn--outline btn btn--full magnetic-btn">Get Monthly Growth</a>
+                    <a href="#contact" class="btn btn--ghost btn--full magnetic-btn">Get Monthly Growth</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ========== SERRATED DIVIDER ========== -->
+    <div class="serrated-edge"></div>
+
     <!-- ========== FAQ ========== -->
-    <section class="faq section section--dark" id="faq">
+    <section class="faq section" id="faq">
         <div class="container">
-            <span class="pill-label pill-label--light">FAQ</span>
-            <h2 class="display-heading display-heading--center display-heading--light">Questions? <em>Answers.</em></h2>
+            <span class="pill-label">FAQ</span>
+            <h2 class="display-heading display-heading--center">Questions? <em>Answers.</em></h2>
 
             <div class="faq__list">
                 <div class="faq__item" data-reveal>
@@ -729,21 +748,16 @@
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
-    <section class="cta section section--dark" id="contact">
+    <!-- ========== STICKY NOTE CTA ========== -->
+    <section class="cta section" id="contact">
         <div class="container cta__inner">
-            <div class="cta__icon" data-reveal>
-                <svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="24" cy="24" r="22" />
-                    <path d="M16 24l6 6 10-12" />
-                </svg>
-            </div>
-            <h2 class="cta__heading" data-reveal>Ready to <em>Launch?</em></h2>
-            <p class="cta__sub" data-reveal>Let's turn your idea into a product people use.</p>
-            <div class="cta__buttons" data-reveal>
-                <a href="#" class="btn btn--primary-light btn--xl magnetic-btn" data-open-payment>Start Your
-                    Project</a>
-                <a href="#work" class="btn--outline-light btn btn--xl magnetic-btn">View Work</a>
+            <div class="sticky-note-cta" data-reveal>
+                <h2 class="sticky-note-cta__heading">Ready to <em>Launch?</em></h2>
+                <p class="sticky-note-cta__sub">Let's turn your idea into a product people use.</p>
+                <div class="sticky-note-cta__footer">
+                    <a href="#" class="btn btn--dark btn--xl magnetic-btn" data-open-payment>Start Your Project</a>
+                    <a href="#work" class="btn btn--ghost-dark btn--xl magnetic-btn">View Work</a>
+                </div>
             </div>
         </div>
     </section>
@@ -793,20 +807,11 @@
     <!-- ========== WHATSAPP FAB ========== -->
     <a href="https://wa.me/917200000000?text=I'm%20interested%20in%20a%20Zivrodev%20project." class="whatsapp-fab"
         id="whatsappFab" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 32 32" width="28" height="28" fill="#FFF4B7">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="#0C0A09">
             <path
                 d="M16.004 0h-.008C7.174 0 0 7.175 0 16c0 3.498 1.131 6.742 3.052 9.375L1.054 31.22l6.078-1.95A15.93 15.93 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.31 22.614c-.39 1.097-1.932 2.009-3.165 2.275-.845.18-1.947.322-5.66-1.217-4.752-1.97-7.81-6.79-8.046-7.106-.226-.316-1.9-2.53-1.9-4.826s1.202-3.423 1.63-3.89c.39-.427.924-.606 1.235-.606.15 0 .285.007.406.013.428.018.643.043 .925.716.353.843 1.213 2.96 1.318 3.177.106.218.21.516.06.81-.14.302-.264.437-.48.68-.218.243-.424.428-.64.69-.198.235-.42.487-.18.917.24.424 1.067 1.757 2.29 2.847 1.573 1.4 2.9 1.834 3.312 2.04.413.206.654.172.896-.104.25-.285 1.07-1.248 1.356-1.675.278-.428.564-.353.943-.212.385.14 2.442 1.152 2.862 1.362.42.21.7.316.803.49.1.174.1 1.012-.29 2.108z" />
         </svg>
     </a>
-
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-            <path fill="#FFF" stroke="#000" stroke-width="2"
-                d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z">
-            </path>
-        </svg>
-    </div>
 
     <!-- Payment Gateway Demo Modal -->
     <div class="payment-modal" id="paymentModal">
@@ -843,15 +848,15 @@
                         <input type="text" placeholder="123" maxlength="3" id="cardCVV">
                     </div>
                 </div>
-                <button class="btn btn--primary btn--full payment-modal__pay" id="payBtn">Pay ₹15,000</button>
+                <button class="btn btn--accent btn--full payment-modal__pay" id="payBtn">Pay ₹15,000</button>
                 <p class="payment-modal__disclaimer">🔒 This is a demo — no real payment will be processed.</p>
             </div>
             <!-- Success state (hidden by default) -->
             <div class="payment-modal__success" id="paymentSuccess">
                 <div class="payment-modal__check">
                     <svg viewBox="0 0 52 52" width="64" height="64">
-                        <circle cx="26" cy="26" r="25" fill="none" stroke="var(--teal)" stroke-width="2" />
-                        <path fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"
+                        <circle cx="26" cy="26" r="25" fill="none" stroke="#D4F268" stroke-width="2" />
+                        <path fill="none" stroke="#D4F268" stroke-width="3" stroke-linecap="round"
                             stroke-linejoin="round" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="payment-check-path" />
                     </svg>
                 </div>
